@@ -191,9 +191,11 @@ class JsonSchema(object):
         estrutura = json.loads(j)
         e = self._comparar(estrutura, self.schema_dict)
         t = json.dumps(e, indent=4)
+        print(t)
         t = t.replace("\\u001b[91m", "\033[91m").replace("\\u001b[92m",
                                                          "\033[92m")
         print("\033[92m%s\033[0m" % t)
+        return t
 
     def loads(self, schema):
         """Este quem de fato carrega o schema."""
